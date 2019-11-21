@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>This is the Index Template.</h1>
+    {{#user}}
+    <h2>My name is {{user.username}}.</h2>
+    {{/user}}
+    <p>{{date}}</p>
+    <ol>
+      {{#profiles}}
+      <li>
+        {{name}} lives in {{city}}
+        {{#profession}}
+        and is a {{profession}}
+        {{/profession}}.
+      </li>
+      {{/profiles}}
+    </ol>
+
+    <form method="post" action="/join">
+      <input type="text" name="name" placeholder="Name" />
+      <input type="text" name="city" placeholder="City" />
+      <input type="text" name="profession" placeholder="Profession" />
+      </br>
+      <input type="submit" value="Add Profile" />
+    </form>
+  </div>
+</body>
+
+</html>
